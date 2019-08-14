@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<!--
+ *   ╲          ╱
+ * ╭──────────────╮  COPYRIGHT (C) 2015 GINGER PAYMENTS B.V.
+ * │╭──╮      ╭──╮│
+ * ││//│      │//││  
+ * │╰──╯      ╰──╯│  
+ * ╰──────────────╯
+ *   ╭──────────╮    The MIT License (MIT)
+ *   │ () () () │
+ *
+ * @category    ING
+ * @package     ING_KassaCompleet
+ * @author      Ginger B.V. (info@gingerpayments.com)
+ * @version     v1.0.3
+ * @copyright   COPYRIGHT (C) 2015 GINGER PAYMENTS B.V. (https://www.gingerpayments.com)
+ * @license     The MIT License (MIT)
+-->
+<config>
+    <modules>
+        <ING_KassaCompleet>
+            <version>1.0.3</version>
+        </ING_KassaCompleet>
+    </modules>
+    <global>
+        <models>
+            <ingkassacompleet>
+                <class>ING_KassaCompleet_Model</class>
+            </ingkassacompleet>
+        </models>
+        <blocks>
+            <ingkassacompleet>
+                <class>ING_KassaCompleet_Block</class>
+            </ingkassacompleet>
+            <payment>
+                <class>ING_KassaCompleet_Block</class>
+                <class>Mage_Payment_Block</class>
+            </payment>
+        </blocks>
+        <helpers>
+            <ingkassacompleet>
+                <class>ING_KassaCompleet_Helper</class>
+            </ingkassacompleet>
+        </helpers>
+        <payment>
+            <groups>
+                <ingkassacompleet>ingkassacompleet</ingkassacompleet>
+            </groups>
+        </payment>
+        <resources>
+            <ingkassacompleet_setup>
+                <setup>
+                    <module>ING_KassaCompleet</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </ingkassacompleet_setup>
+            <ingkassacompleet_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </ingkassacompleet_write>
+            <ingkassacompleet_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </ingkassacompleet_read>
+        </resources>
+        <fieldsets>
+            <sales_convert_quote>
+                <ing_order_id><to_order>*</to_order></ing_order_id>
+                <ing_banktransfer_reference><to_order>*</to_order></ing_banktransfer_reference>
+                <ing_ideal_issuer_id><to_order>*</to_order></ing_ideal_issuer_id>
+            </sales_convert_quote>
+            <sales_convert_order>
+                <ing_order_id><to_quote>*</to_quote></ing_order_id>
+                <ing_banktransfer_reference><to_quote>*</to_quote></ing_banktransfer_reference>
+                <ing_ideal_issuer_id><to_quote>*</to_quote></ing_ideal_issuer_id>
+            </sales_convert_order>
+        </fieldsets>
+    </global>
+    <frontend>
+        <routers>
+            <ingkassacompleet>
+                <use>standard</use>
+                <args>
+                    <module>ING_KassaCompleet</module>
+                    <frontName>ingkassacompleet</frontName>
+                </args>
+            </ingkassacompleet>
+        </routers>
+        <layout>
+            <updates>
+                <ingkassacompleet>
+                    <file>ing_kassacompleet.xml</file>
+                </ingkassacompleet>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <ING_KassaCompleet>
+                    <files>
+                        <default>ING_KassaCompleet.csv</default>
+                    </files>
+                </ING_KassaCompleet>
+            </modules>
+        </translate>
+        <events>
+            <sales_convert_quote_payment_to_order_payment>
+                <observers>
+                    <ingkassacompleet_observer>
+                        <type>singleton</type>
+                        <class>ingkassacompleet/observer</class>
+                        <method>convertPayment</method>
+                    </ingkassacompleet_observer>
+                </observers>
+            </sales_convert_quote_payment_to_order_payment>
+        </events>
+    </frontend>
+    <adminhtml>
+        <layout>
+            <updates>
+                <ingkassacompleet>
+                    <file>ing_kassacompleet.xml</file>
+                </ingkassacompleet>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <ING_KassaCompleet>
+                    <files>
+                        <default>ING_KassaCompleet.csv</default>
+                    </files>
+                </ING_KassaCompleet>
+            </modules>
+        </translate>
+    </adminhtml>
+    <default>
+        <payment>
+            <ingkassacompleet_ideal>
+                <group>ingkassacompleet</group>
+                <active>1</active>
+                <title>iDEAL</title>
+                <description>iDEAL</description>
+                <model>ingkassacompleet/ideal</model>
+                <title>iDEAL</title>
+                <currency>EUR</currency>
+                <allowspecific>1</allowspecific>
+                <specificcountry>NL</specificcountry>
+                <sort_order>101</sort_order>
+            </ingkassacompleet_ideal>
+            <ingkassacompleet_banktransfer>
+                <group>ingkassacompleet</group>
+                <active>1</active>
+                <title>Overboeking</title>
+                <description>Overboeking</description>
+                <model>ingkassacompleet/banktransfer</model>
+                <title>Overboeking</title>
+                <currency>EUR</currency>
+                <allowspecific>1</allowspecific>
+                <specificcountry>NL</specificcountry>
+                <sort_order>102</sort_order>
+                <account_details>
+                    <iban>NL13INGB0005300060</iban>
+                    <bic>INGBNL2A</bic>
+                    <holder>ING Bank N.V. PSP</holder>
+                    <city>Amsterdam, NL</city>
+                </account_details>
+            </ingkassacompleet_banktransfer>
+            <ingkassacompleet_creditcard>
+                <group>ingkassacompleet</group>
+                <active>1</active>
+                <title>CreditCard</title>
+                <description>CreditCard</description>
+                <model>ingkassacompleet/creditcard</model>
+                <title>CreditCard</title>
+                <currency>EUR</currency>
+                <allowspecific>1</allowspecific>
+                <specificcountry>NL</specificcountry>
+                <sort_order>103</sort_order>
+            </ingkassacompleet_creditcard>
+            <ingkassacompleet_cashondelivery>
+                <group>ingkassacompleet</group>
+                <active>1</active>
+                <title>Rembours</title>
+                <description>Rembours</description>
+                <model>ingkassacompleet/cashondelivery</model>
+                <title>Rembours</title>
+                <currency>EUR</currency>
+                <allowspecific>1</allowspecific>
+                <specificcountry>NL</specificcountry>
+                <sort_order>104</sort_order>
+            </ingkassacompleet_cashondelivery>
+        </payment>
+    </default>
+</config>

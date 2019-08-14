@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+*   ╲          ╱
+* ╭──────────────╮  COPYRIGHT (C) 2015 GINGER PAYMENTS B.V.
+* │╭──╮      ╭──╮│
+* ││//│      │//││  
+* │╰──╯      ╰──╯│  
+* ╰──────────────╯
+*   ╭──────────╮    The MIT License (MIT)
+*   │ () () () │
+*
+*
+* @category    ING
+* @package     ING_KassaCompleet
+* @author      Ginger B.V. (info@gingerpayments.com)
+* @version     v1.0.3
+* @copyright   COPYRIGHT (C) 2015 GINGER PAYMENTS B.V. (https://www.gingerpayments.com)
+* @license     The MIT License (MIT)
+*
+**/
+-->
+<config>
+    <modules>
+        <ING_KassaCompleet>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Payment />
+                <Mage_Checkout />
+            </depends>
+            <version>1.0.3</version>
+        </ING_KassaCompleet>
+    </modules>
+</config>

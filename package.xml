@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<package>
+    <name>ING_KassaCompleet</name>
+    <version>1.0.3</version>
+    <stability>stable</stability>
+    <license uri="https://opensource.org/licenses/MIT">The MIT License (MIT)</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>ING Kassa Compleet - Magento Extension for iDEAL, Banktransfer and Creditcard</summary>
+    <description>ING Kassa Compleet extension for Magento compatible with: 1.6, 1.6.1, 1.6.2.0, 1.7, 1.8, 1.9 (tested for 1.6.0.0, 1.8.1.0, 1.9.1.1). &#xD;
+This extension installs 4 payment methods; iDEAL, CreditCard, Banktransfer and Cash on Delivery</description>
+    <notes>ING Kassa Compleet-Magento Extension for iDEAL, Banktransfer and Creditcard&#xD;
+====================&#xD;
+&#xD;
+# Changelog #&#xD;
+&#xD;
+## Changes in version 1.0.0&#xD;
++ Initial version based upon Ginger Payments version&#xD;
+&#xD;
+## Changes in version 1.0.1&#xD;
++ Updated the README.md&#xD;
+&#xD;
+## Changes in version 1.0.2&#xD;
++ Handle banktransfer correctly&#xD;
+&#xD;
+## Changes in version 1.0.3&#xD;
++ Added version to the webhook&#xD;
++ Added cash on delivery</notes>
+    <authors><author><name>ING</name><user>ING</user><email>info@ing.nl</email></author></authors>
+    <date>2015-10-19</date>
+    <time>12:12:38</time>
+    <contents><target name="magecommunity"><dir name="ING"><dir name="KassaCompleet"><dir name="Block"><dir name="Payment"><dir name="Banktransfer"><file name="Form.php" hash="f1b13eff4e43f732737566ea54d00d21"/><file name="Info.php" hash="bbf96f67cb7a1aa02d6739f6f50c35cd"/></dir><dir name="Cashondelivery"><file name="Form.php" hash="1900e19dc3d2a4818d613131444fa24e"/><file name="Info.php" hash="ffc6a470b29e1b5ced4766bdf4a72799"/></dir><dir name="Ideal"><file name="Form.php" hash="28ae9f79830acd729090b1e774d46df7"/><file name="Info.php" hash="7e449555863c87acc4602e5afde9bec4"/></dir></dir></dir><dir name="Helper"><file name="Banktransfer.php" hash="f5ea882865bc9f34aa5facae07bdbc37"/><file name="Cashondelivery.php" hash="b8426e1b54d91968a187562e80332959"/><file name="Creditcard.php" hash="fc3ebfa1a6aee658ed23cd9cc762863d"/><file name="Data.php" hash="3d2910f45acf68204f721fe799b94300"/><file name="Ideal.php" hash="59ab4ede2ecbf29aca3e2a53f9eec0a2"/></dir><dir name="Model"><file name="Banktransfer.php" hash="f1613cf6d6db907587898e68253744e8"/><file name="Cashondelivery.php" hash="aedb293e8e5daf225e31f940e9a26cba"/><file name="Creditcard.php" hash="45e51cd42c13e7aceba2693972514cc6"/><file name="Ideal.php" hash="0b7da3aad3ec9c96ec5b6f18fba8e43a"/><file name="Observer.php" hash="e2adaa4d0c146bd8fa0c8916c82a3559"/></dir><dir name="controllers"><file name="BanktransferController.php" hash="cfc1acb3610bf8a947914f189056d47e"/><file name="CashondeliveryController.php" hash="dd73d6ce63db8b6a6f38e8d0c4579af0"/><file name="CreditcardController.php" hash="866b451e1b632099e53333c2aa08c51e"/><file name="IdealController.php" hash="8f2d2a1eadeeeaf3d7b5a83504943194"/></dir><dir name="etc"><file name="adminhtml.xml" hash="ddc069595a5c20400053fe178f58fed7"/><file name="config.xml" hash="9d24a30318665208ac3daf5206801c0b"/><file name="system.xml" hash="21c1cf59c2a8dcff370ebfe12975acfa"/></dir><dir name="sql"><dir name="ingkassacompleet_setup"><file name="mysql4-install-0.0.1.php" hash="ea0fe992dba6280745622cb3cf01804e"/><file name="mysql4-uninstall-0.0.1.php" hash="01fc9db0b665a91be6f024463eddf4b6"/><file name="mysql4-upgrade-0.0.1-0.0.2.php" hash="972cfd33f1be9a641b0f1c8babcb79af"/><file name="mysql4-upgrade-0.0.2-0.0.3.php" hash="1d774b6c66b07250d5f25f2e5f9c143a"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="ing_kassacompleet"><dir name="info"><file name="banktransfer.phtml" hash="8e76ef1f36215bb7c0666174901b4f4d"/><file name="cashondelivery.phtml" hash="8e76ef1f36215bb7c0666174901b4f4d"/></dir></dir></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="template"><dir name="ing_kassacompleet"><dir name="form"><file name="banktransfer.phtml" hash="9803a0b0898da0160bd54bac248ee0b2"/><file name="cashondelivery.phtml" hash="9803a0b0898da0160bd54bac248ee0b2"/><file name="ideal.phtml" hash="cd7ef72a0dc80d67314f54552a0da9fa"/></dir><dir name="info"><file name="banktransfer.phtml" hash="8e76ef1f36215bb7c0666174901b4f4d"/><file name="cashondelivery.phtml" hash="8e76ef1f36215bb7c0666174901b4f4d"/></dir><file name="success.phtml" hash="cb2ea88dc142ffa6695d65a3c5881291"/></dir></dir><dir name="layout"><file name="ing_kassacompleet.xml" hash="f5ad6a3deffa8f12cfab1bbc1b3e8c0b"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="ING_KassaCompleet.xml" hash="1ca256e56c46dd8f0c63ab2e6275049a"/></dir></target><target name="magelocale"><dir name="en_US"><file name="ING_KassaCompleet.csv" hash="52979402cf0ef512d212b17540d10028"/></dir><dir name="nl_NL"><file name="ING_KassaCompleet.csv" hash="570efc6e67545149115dc269a0432c8c"/></dir></target><target name="magelib"><dir name="Ing"><dir name="Services"><file name="Lib.php" hash="c61dfcc2efa3dd42366290227930599e"/></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.13</min><max>6.2.0</max></php></required></dependencies>
+</package>

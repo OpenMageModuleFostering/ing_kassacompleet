@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/ING_KassaCompleet",
+    "name": "OpenMageModuleFostering\/ING_KassaCompleet",
     "type": "magento-module",
     "license": "The-MIT-License-(MIT)",
     "homepage": "",
     "description": "ING Kassa Compleet - Magento Extension for iDEAL, Banktransfer and Creditcard",
     "authors": [
-    {
-        "name": "ING",
-        "email": "info@ing.nl"
-    }
-],
+        {
+            "name": "ING",
+            "email": "info@ing.nl"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
